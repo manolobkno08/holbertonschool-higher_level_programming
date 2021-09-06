@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-filename = $PYFILE
+python3 $PYFILE
