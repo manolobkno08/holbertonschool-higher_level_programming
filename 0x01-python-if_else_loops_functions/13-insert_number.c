@@ -8,22 +8,22 @@
  *
  * Return: The singly linked list with the new number added
  */
-listint_t *insert_node(listint_t head, int number)
+listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *list_current = NULL, *Newnodo = NULL, temp = NULL;
+	listint_t *list_current = NULL, *Newnodo = NULL, *temp = NULL;
 
 	Newnodo = malloc(sizeof(listint_t));
 	if (Newnodo == NULL)
 		return (NULL);
 
 	Newnodo->n = number;
-	if (head)
+	if (*head)
 	{
 		list_current = *head;
 		if (number <= list_current->n)
 		{
 			Newnodo->next = list_current;
-			head = Newnodo;
+			*head = Newnodo;
 		}
 		else
 		{
@@ -34,7 +34,7 @@ listint_t *insert_node(listint_t head, int number)
 					temp = list_current->next;
 					list_current->next = Newnodo;
 					Newnodo->next = temp;
-					return (head);
+					return (*head);
 				}
 				list_current = list_current->next;
 			}
@@ -45,6 +45,6 @@ listint_t *insert_node(listint_t head, int number)
 		return (*head);
 	}
 	Newnodo->next = NULL;
-	head = Newnodo;
-	return (head);
+	*head = Newnodo;
+	return (*head);
 }
