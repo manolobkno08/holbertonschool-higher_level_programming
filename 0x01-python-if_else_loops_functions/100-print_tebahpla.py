@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-str = "AbCdEfGhIjKlMnOpQrStUvWxYz"
-print(str[::-1])
+st = "AbCdEfGhIjKlMnOpQrStUvWxYz"
+print("{}".format(st[::-1]), end="")
