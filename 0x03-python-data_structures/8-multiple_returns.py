@@ -5,6 +5,6 @@ def multiple_returns(sentence):
     if large > 0:
         first_c = sentence[0]
     else:
-        return None
+        first_c = None
 
     return (large, first_c)
