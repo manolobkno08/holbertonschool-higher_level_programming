@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
-    if a_dictionary is not None:
-        return (max(a_dictionary.values()))
-    return None
+    if a_dictionary is None:
+        return None
+    winner = max(a_dictionary.values(), default=None)
+    for i, j in a_dictionary.items():
+        if j == winner:
+            return i
