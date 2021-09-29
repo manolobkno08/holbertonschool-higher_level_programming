@@ -2,5 +2,6 @@
 """Create new class"""
 
 
-class Rectangle():
+class Rectangle:
+    """Return empty"""
     pass
