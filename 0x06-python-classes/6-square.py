@@ -36,12 +36,33 @@ class Square():
     """Define SET method and validations"""
     @position.setter
     def position(self, position):
-        if type(position) is not tuple or type(position[0]) is not int\
-                or type(position[1]) is not int or position[0] < 0\
-                or position[1] < 0 or len(position) != 2:
+        if self.check_tuple(position) is False \
+           or self.check_indexes(position) is False \
+           or self.check_integers(position) is False \
+           or self.check_values(position) is False:
             raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = position
+
+        self.__position = position
+
+    def check_tuple(self, position):
+        if type(position) is tuple:
+            return True
+        return False
+
+    def check_indexes(self, position):
+        if len(position) == 2:
+            return True
+        return False
+
+    def check_integers(self, position):
+        if type(position[0]) is int and type(position[1]) is int:
+            return True
+        return False
+
+    def check_values(self, position):
+        if position[0] >= 0 and position[1] >= 0:
+            return True
+        return False
 
         """Define a new method"""
 
@@ -62,3 +83,9 @@ class Square():
         for j in range(self.__size):
             print("".join([" " for it_1 in range(self.__position[0])]), end="")
             print("".join(["#" for it_2 in range(self.__size)]))
+
+
+try:
+    my_square = Square(3, (1, ))
+except Exception as e:
+    print(e)
