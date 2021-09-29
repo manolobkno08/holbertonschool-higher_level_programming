@@ -83,9 +83,3 @@ class Square():
         for j in range(self.__size):
             print("".join([" " for it_1 in range(self.__position[0])]), end="")
             print("".join(["#" for it_2 in range(self.__size)]))
-
-
-try:
-    my_square = Square(3, (1, ))
-except Exception as e:
-    print(e)
