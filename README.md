@@ -12,4 +12,4 @@
 
 # Authors
 
-> **Manuel Alejandro Gomez**
+> **Manuel Alejandro Gomez** | [Twitter](https://twitter.com/ManoloGomez08)
