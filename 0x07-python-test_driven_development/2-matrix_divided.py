@@ -10,6 +10,8 @@ Always success
 
 def matrix_divided(matrix, div):
     """Validate div value"""
+    if div is None:
+        raise TypeError("div must be a number")
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
     if div == 0:

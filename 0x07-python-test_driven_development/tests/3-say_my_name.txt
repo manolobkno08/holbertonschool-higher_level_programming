@@ -1,34 +1,40 @@
 =======================
-| TEST PRINT MY NAMES |
+|  Test Div Matrix  |
 =======================
 
-Check if the input of my name is correct.
+``3-say_my_name()`` Return a full name
 
-PRINT FULL NAME:
-=======
+Importing the function from the module:
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
 
-``say_my_name`` returns the full name
-
-::
-	>>> say_my_name = __import__('3-say_my_name').say_my_name
+Checking regular case:
 	>>> say_my_name("John", "Smith")
 	My name is John Smith
 
-	>>> say_my_name("Bob")
-	My name is Bob
 
-
-EXCEPTIONS:
-============
-
-The program raised errors when the value is not a string
-
+Check Exceptions for all cases
 ::
-	>>> say_my_name(7, "Gomez")
+
+Checking for passing None as first name:
+	>>> say_my_name(None, "Hello")
 	Traceback (most recent call last):
+	...
 	TypeError: first_name must be a string
 
-    >>> say_my_name("Manuel", 8)
+Checking for passing None as last name:
+	>>> say_my_name("Hello", None)
 	Traceback (most recent call last):
+	...
 	TypeError: last_name must be a string
 
+Checking for wrong type as first name:
+	>>> say_my_name(1, "Hello")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+Checking for wrong type as last name:
+	>>> say_my_name("Hello", [4])
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string

@@ -7,6 +7,20 @@
 Importing the function from the module:
 	>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
 
+Checking regular case:
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Checking with positive and negative cases with int and float values:
+	>>> matrix = [[1.3, 2.9, 3],[-4, 5, -6.2]]
+	>>> matrix_divided(matrix, 3)
+	[[0.43, 0.97, 1.0], [-1.33, 1.67, -2.07]]
+
+
+Check Exceptions for all cases
+::
+
 Checking for passing None as matrix:
 	>>> matrix_divided(None, 1)
 	Traceback (most recent call last):
@@ -19,3 +33,44 @@ Checking for passing None as div:
 	Traceback (most recent call last):
 	...
 	TypeError: div must be a number
+
+Checking for matrix as list:
+	>>> matrix = "World"
+	>>> matrix_divided(matrix, 1)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Checking for size of rows on matrix:
+	>>> matrix = [[1, 2, 3], [4, 5, 6, 7]]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+	...
+	TypeError: Each row of the matrix must have the same size
+
+Checking for division by zero:
+	>>> matrix_divided(matrix, 0)
+	Traceback (most recent call last):
+	...
+	ZeroDivisionError: division by zero
+
+Checking if div is not int or float:
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, "Hello")
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
+
+Checking if row in matrix:
+	>>> matrix = ["Hi", [4, 5, 6]]
+	>>> matrix_divided(matrix, 1)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Checking if row in matrix:
+	>>> matrix = [[1, "H", 3], [4, False, 6]]
+	>>> matrix_divided(matrix, 1)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
