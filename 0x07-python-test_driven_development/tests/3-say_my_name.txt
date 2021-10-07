@@ -37,7 +37,7 @@ Checking for wrong type as first name:
 	TypeError: first_name must be a string
 
 Checking for wrong type as last name:
-	>>> say_my_name("Hello", [8])
+	>>> say_my_name("Hello", 8)
 	Traceback (most recent call last):
 	...
 	TypeError: last_name must be a string
