@@ -21,11 +21,11 @@ def matrix_divided(matrix, div):
     messages_m = "matrix must be a matrix (list of lists) of integers/floats"
     if type(matrix) is not list:
         raise TypeError(messages_m)
-    for i in matrix:
-        if type(i) is not list:
+    for row in matrix:
+        if type(row) is not list:
             raise TypeError(messages_m)
-        for j in i:
-            if type(j) not in (int, float):
+        for column in row:
+            if type(column) not in (int, float):
                 raise TypeError(messages_m)
 
     """Check rows of matrix should be the same size"""
