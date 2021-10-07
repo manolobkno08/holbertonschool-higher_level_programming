@@ -12,8 +12,8 @@ Checking regular case:
 	My name is John Smith
 
 Checking for 1 arg:
-	 >>> say_my_name("Hello")
-	 My name is Hello
+	 >>> say_my_name("Bob")
+	 My name is Bob 
 
 Check Exceptions for all cases
 ::
