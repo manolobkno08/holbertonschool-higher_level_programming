@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """
 Function that return div of two lists by element
+
 Doctest check the tests
-always success
+
+Always success
 """
 
 
