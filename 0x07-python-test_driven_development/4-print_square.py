@@ -17,22 +17,7 @@ def print_square(size):
     if type(size) is float and size < 0:
         raise TypeError("size must be an integer")
 
-    for row in range(0, size):
-        for column in range(0, size):
+    for i in range(0, size):
+        for row in range(0, size):
             print("#", end="")
         print()
-
-
-print_square(4)
-print("")
-print_square(10)
-print("")
-print_square(0)
-print("")
-print_square(1)
-print("")
-try:
-    print_square(-1)
-except Exception as e:
-    print(e)
-print("")
