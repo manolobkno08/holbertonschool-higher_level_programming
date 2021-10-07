@@ -11,6 +11,10 @@ Checking regular case:
 	>>> say_my_name("John", "Smith")
 	My name is John Smith
 
+Checking for 1 arg:
+	 >>> say_my_name("Hello")
+	 My name is Hello
+
 Check Exceptions for all cases
 ::
 
@@ -37,7 +41,3 @@ Checking for wrong type as last name:
 	Traceback (most recent call last):
 	...
 	TypeError: last_name must be a string
-
-Checking for 1 arg:
-	 >>> say_my_name("Hello")
-	 My name is Hello 
