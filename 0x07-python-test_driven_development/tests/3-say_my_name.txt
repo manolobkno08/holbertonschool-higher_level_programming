@@ -10,9 +10,6 @@ Importing the function from the module:
 Checking regular case:
 	>>> say_my_name("John", "Smith")
 	My name is John Smith
-	>>> say_my_name("John")
-	My name is John
-
 
 Check Exceptions for all cases
 ::
@@ -36,7 +33,11 @@ Checking for wrong type as first name:
 	TypeError: first_name must be a string
 
 Checking for wrong type as last name:
-	>>> say_my_name("Hello", [4])
+	>>> say_my_name("Hello", [8])
 	Traceback (most recent call last):
 	...
 	TypeError: last_name must be a string
+
+Checking for 1 arg:
+	 >>> say_my_name("Hello")
+	 My name is Hello 
