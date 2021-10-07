@@ -7,27 +7,37 @@
 Importing the function from the module:
 	>>> say_my_name = __import__("3-say_my_name").say_my_name
 
+Checking regular case:
 	>>> say_my_name("Hello", "World")
 	My name is Hello World
 
+Checking with one arg:
 	>>> say_my_name("Bob")
 	My name is Bob 
 
-Take cases
-============
 
-	>>> say_my_name(12, "Pasos")
+Check Exceptions for all cases
+::
+
+Checking int value as first name:
+	>>> say_my_name(8, "string")
 	Traceback (most recent call last):
 	TypeError: first_name must be a string
 
-	>>> say_my_name("Coco", ["a","b"])
+Checking tuple value as last name:
+	>>> say_my_name("Coco", (1, 2))
 	Traceback (most recent call last):
+	...
 	TypeError: last_name must be a string
 
+Checking none value:
 	>>> say_my_name(None)
 	Traceback (most recent call last):
+	...
 	TypeError: first_name must be a string
 
+Checking function without args:
 	>>> say_my_name()
 	Traceback (most recent call last):
+	...
 	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
