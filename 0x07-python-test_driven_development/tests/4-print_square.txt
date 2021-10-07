@@ -41,7 +41,7 @@ Checking if a value is a string:
 	Traceback (most recent call last):
 	TypeError: size must be an integer
 
-Checking if a value is None:
-	>>> print_square(None)
+Checking if a value is empty:
+	>>> print_square()
 	Traceback (most recent call last):
-	TypeError: size must be an integer
+	TypeError: print_square() missing 1 required positional argument: 'size'
