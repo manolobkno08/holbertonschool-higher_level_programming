@@ -19,8 +19,6 @@ def matrix_divided(matrix, div):
 
     """Check if the matrix is a list of integers and floats"""
     messages_m = "matrix must be a matrix (list of lists) of integers/floats"
-    if matrix == None:
-        raise TypeError(messages_m)
     if type(matrix) is not list:
         raise TypeError(messages_m)
     for i in matrix:
