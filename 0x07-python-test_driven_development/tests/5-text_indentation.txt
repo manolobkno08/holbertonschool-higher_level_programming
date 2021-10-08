@@ -8,6 +8,18 @@ Importing the function from the module:
 	>>> text_indentation = __import__('5-text_indentation').text_indentation
 
 Checking regular case:
+	>>> text_indentation("""Holberton. School? How are you: John""")
+	Holberton.
+	<BLANKLINE>
+	School?
+	<BLANKLINE>
+	How are you:
+	<BLANKLINE>
+	John
+
+Checking for one word:
+	>>> text_indentation("Hello")
+	Hello
 
 Checking for no args:
 	>>> text_indentation()
@@ -21,12 +33,8 @@ Checking for passing None:
 	...
 	TypeError: text must be a string
 
-Checking for passing non-string type:
+Checking not string type:
 	>>> text_indentation(1)
 	Traceback (most recent call last):
 	...
 	TypeError: text must be a string
-
-Checking for one word:
-	>>> text_indentation("Hello")
-	Hello
