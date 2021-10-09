@@ -1,0 +1,50 @@
+=======================
+|  Lazy Mult Matrix  |
+=======================
+
+``101-lazy_matrix_mul()`` Return a division by each one of the index values
+
+Importing the function from the module:
+	>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+Checking regular case:
+	>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+	[[ 7 10]
+	 [15 22]]
+
+	 >>> print(lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
+	 [[13 16]]
+
+
+Check Exceptions for all cases
+::
+
+Checking for none list as m_a:
+	 >>> lazy_matrix_mul(None, [[1, 2], [3, 4]])
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: Object arrays are not currently supported
+
+Checking for empty m_a:
+	 >>> lazy_matrix_mul([], [[1, 2], [3, 4]])
+	 Traceback (most recent call last):
+	 ...
+	 ValueError: shapes (0,) and (2,2) not aligned: 0 (dim 0) != 2 (dim 0)
+
+Checking for m_a with empty items:
+	 >>> lazy_matrix_mul([[], []], [[1, 2], [3, 4]])
+	 Traceback (most recent call last):
+	 ...
+	 ValueError: shapes (2,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)
+
+Checking for string index in m_a:
+	 >>> lazy_matrix_mul([[1, "Hello"], [3, 4]], [[1, 2], [3, 4]])
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: invalid data type for einsum
+
+Checking for string index in m_b:
+	 >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, "Hello"], [3, 4]])
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: invalid data type for einsum
