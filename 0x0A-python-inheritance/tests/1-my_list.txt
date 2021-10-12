@@ -1,0 +1,21 @@
+=======================
+|  My List			 |
+=======================
+
+``1-my_list()`` Return a list
+
+Import module:
+	>>> MyList = __import__('1-my_list').MyList
+
+Check empty list:
+	>>> my = MyList()
+	>>> my.print_sorted()
+	[]
+
+Base case:
+	>>> my.append(1)
+	>>> my.append(2)
+	>>> my.append(3)
+	>>> my.append(4)
+	>>> print(my)
+	[1, 2, 3, 4]
