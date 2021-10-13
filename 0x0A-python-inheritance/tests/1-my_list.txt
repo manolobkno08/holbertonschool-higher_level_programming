@@ -19,3 +19,26 @@ Base case:
 	>>> my.append(4)
 	>>> print(my)
 	[1, 2, 3, 4]
+
+Print list:
+	>>> MyList.print_sorted(1)
+	Traceback (most recent call last):
+	TypeError: 'int' object is not iterable
+
+Exception:
+	>>> MyList([3, "Hi", 1])
+	Traceback (most recent call last):
+	TypeError: __init__() takes 1 positional argument but 2 were given
+
+Funtion print ok:
+	>>> MyList.print_sorted([3, 2, 1])
+	[1, 2, 3]
+
+Must be int:
+	>>> MyList.print_sorted([3, "Hi", 1])
+	Traceback (most recent call last):
+	TypeError: '<' not supported between instances of 'str' and 'int'
+
+List Empty:
+	>>> MyList.print_sorted([])
+	[]
