@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Create inherents class of Base"""
+"""
+Create inherents class of Base
+"""
 
 from .base import Base
 
@@ -8,19 +10,21 @@ class Rectangle(Base):
     """New rectangle"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Initiallize attributes"""
         self.width = width
         self.height = height
         self.x = x
         self.y = y
         super().__init__(id)
 
-    """Width property"""
     @property
     def width(self):
+        """Width property"""
         return (self.__width)
 
     @width.setter
     def width(self, width):
+        """Width Setter"""
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
         if width <= 0:
@@ -28,13 +32,14 @@ class Rectangle(Base):
         else:
             self.__width = width
 
-    """Height property"""
     @property
     def height(self):
+        """Height property"""
         return (self.__height)
 
     @height.setter
     def height(self, height):
+        """Height Setter"""
         if not isinstance(height, int):
             raise TypeError("height must be an integer")
         if height <= 0:
@@ -42,13 +47,14 @@ class Rectangle(Base):
         else:
             self.__height = height
 
-    """x property"""
     @property
     def x(self):
+        """x property"""
         return (self.__x)
 
     @x.setter
     def x(self, x):
+        """x Setter"""
         if not isinstance(x, int):
             raise TypeError("x must be an integer")
         if x < 0:
@@ -56,13 +62,14 @@ class Rectangle(Base):
         else:
             self.__x = x
 
-    """y property"""
     @property
     def y(self):
+        """y property"""
         return (self.__y)
 
     @y.setter
     def y(self, y):
+        """y setter"""
         if not isinstance(y, int):
             raise TypeError("y must be an integer")
         if y < 0:
@@ -71,9 +78,11 @@ class Rectangle(Base):
             self.__y = y
 
     def area(self):
+        """Area of rectangle"""
         return (self.__width * self.__height)
 
     def display(self):
+        """Display rectangle"""
         for i in range(self.__y):
             print("")
         for column in range(self.__height):
@@ -84,10 +93,12 @@ class Rectangle(Base):
             print('#')
 
     def __str__(self):
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height))
+        """String representation"""
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
-
+        """Updating data"""
         if len(args) != 0:
             for i, arg in enumerate(args):
                 if i == 0:
@@ -113,6 +124,7 @@ class Rectangle(Base):
                 self.y = kwargs['y']
 
     def to_dictionary(self):
+        """Create a dictionary"""
         dictionary = {}
         dictionary['x'] = self.x
         dictionary['y'] = self.y
