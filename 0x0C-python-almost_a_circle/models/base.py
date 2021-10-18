@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-"""Create new class Base"""
+"""
+Create new class Base
+"""
+
 import json
 
 
 class Base:
-    """Base"""
+    """Base Class"""
     __nb_objects = 0
 
     def __init__(self, id=None):
