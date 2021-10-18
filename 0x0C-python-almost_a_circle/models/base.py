@@ -4,11 +4,11 @@ import json
 
 
 class Base:
-
+    """Base"""
     __nb_objects = 0
 
     def __init__(self, id=None):
-
+        """Initiallize attributes"""
         if id is not None:
             self.id = id
         else:
@@ -17,6 +17,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """Create new JSON representation"""
 
         if list_dictionaries == [] or list_dictionaries is None:
             list_dictionaries = []
@@ -24,6 +25,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """Create new file with JSON representation"""
         filename = cls.__name__ + '.json'
         list = []
         if list_objs is not None:
