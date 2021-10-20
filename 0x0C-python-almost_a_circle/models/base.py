@@ -4,6 +4,7 @@ Create new class Base
 """
 
 import json
+import csv
 import os
 
 
@@ -68,3 +69,59 @@ class Base:
                 for object in object_list:
                     final_list.append(cls.create(**object))
             return final_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes a list in CSV"""
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'w', newline='') as csvfile:
+            csv_writer = csv.writer(csvfile)
+
+            if cls.__name__ is "Rectangle":
+                for obj in list_objs:
+                    csv_writer.writerow(
+                        [obj.id, obj.width, obj.height,
+                         obj.x, obj.y]
+                    )
+
+            if cls.__name__ is "Square":
+                for obj in list_objs:
+                    csv_writer.writerow(
+                        [obj.id, obj.size,
+                         obj.x, obj.y]
+                    )
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserialize a list in csv"""
+        filename = cls.__name__ + ".csv"
+        list = []
+
+        try:
+            with open(filename, 'r') as csvfile:
+                csv_reader = csv.reader(csvfile)
+
+                for arg in csv_reader:
+
+                    if cls.__name__ is "Rectangle":
+                        dictionary = {
+                            "id": int(arg[0]),
+                            "width": int(arg[1]),
+                            "height": int(arg[2]),
+                            "x": int(arg[3]),
+                            "y": int(arg[4])
+                        }
+
+                    if cls.__name__ is "Square":
+                        dictionary = {
+                            "id": int(arg[0]),
+                            "size": int(arg[1]),
+                            "x": int(arg[2]),
+                            "y": int(arg[3])
+                        }
+                    obj = cls.create(**dictionary)
+                    list.append(obj)
+        except:
+            pass
+
+        return list
