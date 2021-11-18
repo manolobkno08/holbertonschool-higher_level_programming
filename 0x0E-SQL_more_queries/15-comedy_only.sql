@@ -1,7 +1,9 @@
 -- List Gender
 SELECT tv_shows.title
 FROM tv_shows
-JOIN tv_genres_genres
-ON tv_shows.id = tv_shows.genres.genre.show_id
+JOIN tv_show_genres
+ON tv_shows.id = tv_show_genders.show_id
+JOIN tv_genres
+ON tv_genders.id = tv_show_genres.genre_id
 WHERE tv_genres.name = 'Comedy'
-ORDER BY show_tv.title;
+ORDER BY tv_shows.title;
