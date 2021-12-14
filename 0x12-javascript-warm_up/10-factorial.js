@@ -11,7 +11,7 @@ try {
   const res = factorial(x);
   console.log(res);
 } catch (error) {
-  console.error(1);
+  console.log(1);
 }
 
 function factorial (x) {
