@@ -4,6 +4,4 @@ function callMeMoby (x, theFunction) {
 	return (theFunction * x);
 }
 
-// callMeMoby(3, function () {
-// 	console.log('C is fun');
-// });
+module.exports = { callMeMoby: callMeMoby };
