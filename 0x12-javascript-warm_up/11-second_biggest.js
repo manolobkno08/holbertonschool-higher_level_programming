@@ -12,10 +12,10 @@ if (args.length <= 3) {
   args.forEach(function (element) {
     const x = parseInt(element);
     if (!isNaN(x)) {
-      myArray.push(element);
+      myArray.push(parseInt(element));
     }
   });
-  myArray.sort();
+  myArray.sort(function (a, b) {return a - b;});
   myArray.pop();
   const x = myArray[myArray.length - 1];
   console.log(parseInt(x));
