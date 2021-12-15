@@ -15,7 +15,7 @@ if (args.length <= 3) {
       myArray.push(parseInt(element));
     }
   });
-  myArray.sort(function (a, b) {return a - b;});
+  myArray.sort(function (a, b) { return a - b; });
   myArray.pop();
   const x = myArray[myArray.length - 1];
   console.log(parseInt(x));
