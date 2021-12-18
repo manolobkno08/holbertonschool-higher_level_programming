@@ -31,8 +31,10 @@ def connection():
             if state is not None:
                 print("{}: {}".format(state.id, state.name))
                 break
+            else:
+                print("Nothing")
     except Exception:
-        print("Nothing")
+        return 0
     session.close()
 
 
