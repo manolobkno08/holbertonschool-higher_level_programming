@@ -28,8 +28,9 @@ def connection():
     session = Session()
     try:
         for state in session.query(State).all():
-            if state.id == 1:
+            if state is not None:
                 print("{}: {}".format(state.id, state.name))
+                break
     except Exception:
         print("Nothing")
     session.close()
