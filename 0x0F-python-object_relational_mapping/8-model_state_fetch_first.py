@@ -26,15 +26,13 @@ def connection():
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    try:
-        for state in session.query(State).all():
-            if state is not None:
-                print("{}: {}".format(state.id, state.name))
-                break
-            else:
-                print("Nothing")
-    except Exception:
-        return 0
+
+    first_e = session.query(State.id, State.name).first()
+    if first_e is not None:
+        print("{}: {}".format(first_e.id, first_e.name))
+    else:
+        print("Not found")
+
     session.close()
 
 
