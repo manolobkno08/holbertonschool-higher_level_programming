@@ -31,8 +31,11 @@ def connection():
         update_state = session.query(State).filter_by(id=2).first()
         update_state.name = "New Mexico"
         session.commit()
-        session.close()
     except Exception:
         print("ID not found")
 
     session.close()
+
+
+if __name__ == "__main__":
+    connection()
