@@ -5,7 +5,9 @@ from sys import argv
 
 
 def connection():
-    """ Simple Query Function """
+    """
+    Simple Query Function
+    """
     try:
         conn = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
                                passwd=argv[2], db=argv[3], charset="utf8")
@@ -21,5 +23,4 @@ def connection():
     conn.close()
 
 
-if __name__ == "__main__":
-    connection()
+connection()
