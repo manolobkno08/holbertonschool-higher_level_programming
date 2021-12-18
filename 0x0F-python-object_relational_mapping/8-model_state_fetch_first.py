@@ -31,7 +31,7 @@ def connection():
     if first_e is not None:
         print("{}: {}".format(first_e.id, first_e.name))
     else:
-        print("Not found")
+        print("Nothing")
 
     session.close()
 
