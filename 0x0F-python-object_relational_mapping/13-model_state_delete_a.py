@@ -26,13 +26,11 @@ def connection():
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    try:
-        for state in session.query(State).all():
-            if 'a' in state.name:
-                session.delete(state)
-                session.commit()
-    except:
-        pass
+
+    for state in session.query(State).all():
+        if 'a' in state.name:
+            session.delete(state)
+            session.commit()
     session.close()
 
 
