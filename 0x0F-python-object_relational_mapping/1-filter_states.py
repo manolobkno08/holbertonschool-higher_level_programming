@@ -6,7 +6,7 @@ from sys import argv
 
 def connection():
     """
-    FIND N CHARACTER INTO TABLE
+    Simple Query Function
     """
     try:
         conn = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
@@ -19,7 +19,8 @@ def connection():
         "SELECT id, name FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
     query_rows = cur.fetchall()
     for row in query_rows:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
     cur.close()
     conn.close()
 
