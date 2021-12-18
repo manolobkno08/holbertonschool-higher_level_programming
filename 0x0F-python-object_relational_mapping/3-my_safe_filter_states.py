@@ -15,7 +15,7 @@ def connection():
         print("Can't connect to DB")
         return 0
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC;",
+    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC",
                 (argv[4],))
     query_rows = cur.fetchall()
     for row in query_rows:
@@ -25,5 +25,4 @@ def connection():
     conn.close()
 
 
-if __name__ == "__main__":
-    connection()
+connection()
