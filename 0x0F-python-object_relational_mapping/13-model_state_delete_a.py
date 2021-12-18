@@ -30,7 +30,8 @@ def connection():
     for state in session.query(State).all():
         if 'a' in state.name:
             session.delete(state)
-            session.commit()
+
+    session.commit()
     session.close()
 
 
