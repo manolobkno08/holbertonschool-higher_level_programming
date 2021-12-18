@@ -15,7 +15,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
     try:
-        for state in session.query(State).order_by(State.id).all():
+        for state in session.query(State).all():
             if state.id == 1:
                 print("{}: {}".format(state.id, state.name))
     except:
