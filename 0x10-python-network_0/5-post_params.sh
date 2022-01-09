@@ -1,3 +1,3 @@
 #!/bin/bash
 # Header variables - POST
-curl -d "email:test@gmail.com&subject:I will always be here for PLD" -X POST "$1"
+curl -s -X POST "$1" -d "email:test@gmail.com&subject:I will always be here for PLD"
