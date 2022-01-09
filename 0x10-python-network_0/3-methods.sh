@@ -1,3 +1,3 @@
 #!/bin/bash
 # Get all methods allowed
-curl -s -X OPTIONS "$1" -i
+curl -si -X OPTIONS "$1" | grep Allow
