@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+""" Fetch info from https://intranet.hbtn.io/status"""
+
 if __name__ == "__main__":
     import urllib.request as request
 
