@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-import urllib.request
 
-with urllib.request.urlopen('https://intranet.hbtn.io/status') as res:
-    x = res.read()
+if __name__ == "__main__":
+    import urllib.request
 
-with urllib.request.urlopen('https://intranet.hbtn.io/status') as dec:
-    y = dec.read().decode('utf-8')
+    with urllib.request.urlopen('https://intranet.hbtn.io/status') as res:
+        x = res.read()
 
-print(f"""Body response:
-    - type: {type(x)}
-    - content: {x}
-    - utf8 content: {y}""")
+    print(f"Body response:")
+    print(f"\t- type: {type(x)}")
+    print(f"\t- content: {x}")
+    print(f"\t- utf8 content: {x.decode('utf-8')}")
