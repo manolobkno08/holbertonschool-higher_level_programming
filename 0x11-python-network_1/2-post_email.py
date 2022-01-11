@@ -3,11 +3,12 @@
 Display value from POST
 """
 if __name__ == "__main__":
-    import urllib.parse as parse
-    import urllib.request as request
+    from urllib import request, parse
     import sys
 
-    email = parse.urlencode(sys.argv[2]).encode('utf-8')
-    with request.urlopen(sys.argv[1], email=email) as res:
-        x = res.read()
-    print(x)
+    x = {'email': sys.argv[2]}
+    email = parse.urlencode(x).encode('utf-8')
+    url = sys.argv[1]
+    req = request.Request(url, email)
+    with request.urlopen(req) as r:
+        print(r.read())
