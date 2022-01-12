@@ -13,8 +13,8 @@ if __name__ == "__main__":
     else:
         q = ""
     dic = {'q': q}
-    req = requests.post(URL, dic).json()
     try:
+        req = requests.post(URL, dic).json()
         if len(req) == 0 or not req.get('id') or not req.get('name'):
             print("No result")
         else:
