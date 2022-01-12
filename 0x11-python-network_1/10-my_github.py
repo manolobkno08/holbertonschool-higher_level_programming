@@ -10,5 +10,5 @@ if __name__ == "__main__":
     username = argv[1]
     password = argv[2]
     req = requests.get(URL, auth=(username, password))
-    r = req.headers.get('id')
-    print(r)
+    x = req.json()
+    print(x.get('id'))
