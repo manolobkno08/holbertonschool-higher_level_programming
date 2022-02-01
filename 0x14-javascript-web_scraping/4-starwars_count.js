@@ -9,13 +9,12 @@ async function wedgeAntilles () {
     if (err) {
       console.log(err);
     }
-    const user = 'https://swapi-api.hbtn.io/api/people/18/';
     const obj = JSON.parse(body);
     let count = 0;
     const data = obj.results;
     for (const item of data) {
       for (const char of item.characters) {
-        if (char === user) {
+        if (char.includes('18')) {
           count++;
         }
       }
