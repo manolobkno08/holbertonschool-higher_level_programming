@@ -12,16 +12,14 @@ async function taskCompleted () {
     const obj = JSON.parse(body);
     const data = obj;
     const dict = {};
-    let count = 0;
 
     for (const user of data) {
-      if (user.completed === true) {
+      if (user.completed) {
         if (dict[user.userId] === undefined) {
-          count = 1;
+          dict[user.userId] = 1;
         } else {
-          count += 1;
+          dict[user.userId] += 1;
         }
-        dict[user.userId] = count;
       }
     }
     console.log(dict);
